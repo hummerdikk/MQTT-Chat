@@ -82,12 +82,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zRz-tG-6gy"/>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="topicTextField" destination="IxP-wl-KZh" id="ppd-qN-qsv"/>
+                        <outlet property="usernameTextField" destination="8x9-nS-T8O" id="lvU-L4-spZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1049" y="-325"/>
+            <point key="canvasLocation" x="853" y="-325"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="F1I-F2-vvh">
@@ -103,8 +105,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="izf-Kw-cBT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -115,6 +115,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J8p-TN-sb0" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0ir-Gx-wRu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

@@ -6,11 +6,11 @@
 //  Copyright (c) 2015 Kertész Tibor. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "SLKTextViewController.h"
 
-@interface ChatViewController : UIViewController
+@interface ChatViewController : SLKTextViewController
 
-@property (strong,nonatomic) NSString* userName;
-@property (strong,nonatomic) NSString* chatTopic;
+@property (strong,nonatomic) NSString *username;
+@property (strong,nonatomic) NSString *topicPath;
 
 @end
