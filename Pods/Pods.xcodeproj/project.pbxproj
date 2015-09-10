@@ -1,0 +1,814 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		002C72DF03485F8031AEEDDC35572ADB /* UIView+SLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D23C9624CE3F16F48F43D0C26B70676A /* UIView+SLKAdditions.m */; };
+		026BCDE9D1C8F5B1BB9E37BDE358BECC /* SLKUIConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = FE95F1AAD8383CF2321B3B5385EAB4D9 /* SLKUIConstants.h */; };
+		036523D1BC9E6E0DE5D46BBA34AB6A43 /* MQTTEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AEE7B7BC013CD8560DB62ED54BFA1D /* MQTTEncoder.m */; };
+		03F2665E71D334A7A6194C0DA9CA4ADA /* UIResponder+SLKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 23310FA6CD984EC412E6A4BBAB1FA93E /* UIResponder+SLKAdditions.h */; };
+		1047E8A8EC1B4CC7E90534DC3581554E /* MQTTSSLSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = D82AC6CB9985BAAD9358F2DD06C62013 /* MQTTSSLSecurityPolicy.m */; };
+		106B09BF003943BD7365E9BAE69D0C40 /* MQTTMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 540E27147A4C04CC61481555504B9B82 /* MQTTMessage.m */; };
+		327992C63E7472C0C58F0585C9E7C256 /* MQTTSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 60EEF550AB9EA9D8EA18C497B4CACA64 /* MQTTSession.h */; };
+		36A8C88B46F02DF046714E84DC10061D /* SLKTextInputbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 88B1BFD14B1F80BD2F3673D1E46205DA /* SLKTextInputbar.m */; };
+		37A46C20D8CC1802A67145BBC4E85DEF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E116726EABA26B5512F874805C1E888B /* Foundation.framework */; };
+		462F660DF5AD2A6CB7E7D2A269C6A1A1 /* SlackTextViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EF03B67EC4E84A49B0ECCF73606819 /* SlackTextViewController-dummy.m */; };
+		4CB9AC313B3AA070092B31FAF0E445DB /* MQTTClient-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CA37652A5DFB48EA615BD248B35C14DE /* MQTTClient-dummy.m */; };
+		510FB5340E6EABBF685AEA08AA7EA86F /* MQTTMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F9E636D9A78C9E1916553CEE2196878 /* MQTTMessage.h */; };
+		60BCA144618A26D5DDFD4E08F5CDDC48 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E116726EABA26B5512F874805C1E888B /* Foundation.framework */; };
+		69E998F9FB29A395A0BE6A0755918AAF /* SLKTextView+SLKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 36FE1F1A10567CD5D4B2EDA996C46780 /* SLKTextView+SLKAdditions.h */; };
+		6A0CF4C59DD924E3C6BB10038889FBC9 /* MQTTClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 68DDC8593B2C0B95E1243A7802A39854 /* MQTTClient.h */; };
+		7A9613A7CE713566ECB4F21B57612E47 /* UIView+SLKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = D2F2C766B22745CE03807C31FC2332CF /* UIView+SLKAdditions.h */; };
+		7B74BDED5D885322A03C1B8B679891A5 /* SLKTypingIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E7EC9D0345C5274DE5A2829EC659ADC /* SLKTypingIndicatorView.h */; };
+		7D7E2700E92CA741B678CA7DACFB8A0D /* SLKTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A970D354E65DB48DCC8B57C1BC40BA1F /* SLKTextViewController.m */; };
+		8C9073D5E17304C55523FF8F54AB2103 /* SLKTextInputbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 4319BFF15547CBDDD26FF4265CA90470 /* SLKTextInputbar.h */; };
+		8F0D67A3FE48FFFBE1FD3608B86C95E9 /* UIResponder+SLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C22697F60BD3C016B5AE2835F25E912 /* UIResponder+SLKAdditions.m */; };
+		95F424EBC8582301CC8A07A9A0833FBF /* UIScrollView+SLKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 6871473E62305CB91B8A635B061CC43A /* UIScrollView+SLKAdditions.h */; };
+		982BE7E86CDAC162CE5ECC92D0369162 /* MQTTPersistence.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AD8F94D8853C3975F4A9210365C7177 /* MQTTPersistence.h */; };
+		99F26CD15F491963EFAEB75CF2CC1A6F /* MQTTSSLSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = 679E7E4F4CE5CC4475ED3D06D2522964 /* MQTTSSLSecurityPolicy.h */; };
+		A1222D4D1E4B5789B78B209DC4048801 /* Pods-MQTT-Chat-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 148B84F74DFAD7838B13693909420B74 /* Pods-MQTT-Chat-dummy.m */; };
+		A235521094F61E7D13404B6212F1185F /* UIScrollView+SLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E47CDBE81B1E85F43DD141680E8108 /* UIScrollView+SLKAdditions.m */; };
+		AB637EC893D4F166C2369A49A136FE6D /* SLKTextView+SLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 183A1B3399497442535645A19623D2DE /* SLKTextView+SLKAdditions.m */; };
+		AC62FBBEE8EE4714143790D80B4D1E8E /* SLKTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 451F8622E3463D7732D6CC7C5DE676AE /* SLKTextView.h */; };
+		B28AB5E6ADF7A8D00C0E7B77680DEB37 /* SLKInputAccessoryView.h in Headers */ = {isa = PBXBuildFile; fileRef = AF127DFCFD2405143C4FF185D12565B6 /* SLKInputAccessoryView.h */; };
+		BA8A6EC79B2F5DAE207E44C81F319B03 /* MQTTDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = D3099A27F3350A656A21657E1EE69514 /* MQTTDecoder.m */; };
+		BBC9EE328C80566588A116B2B59E4050 /* MQTTEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = F6AB1AE930C0788FE3B40FC528BF60C9 /* MQTTEncoder.h */; };
+		BF68788E8B50D38C1873388F7116C48A /* SLKTypingIndicatorProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = DDCD651FABBA1F934295E126748AEC34 /* SLKTypingIndicatorProtocol.h */; };
+		CFCF909640866A5293285667E9C4BE4B /* Pods-MQTT-ChatTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0918B72743DF517BA3840D869B0A0550 /* Pods-MQTT-ChatTests-dummy.m */; };
+		D001F6A50EBB661B9518F4AB892D4812 /* SLKInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C6F4009990CD2D9A3FE23AD251B3B9 /* SLKInputAccessoryView.m */; };
+		D43EDBBDC334C0DC3D7A81FE55D29BF0 /* SLKTextViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B6D4D42CE6E84BE429678F90B598C2D /* SLKTextViewController.h */; };
+		D626EF431BBFF105CCC5FBFA108C0ABF /* MQTTPersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = C65CF4C9C5A0FAF6B3A090A6BFEAC865 /* MQTTPersistence.m */; };
+		D65F48825DE701194D81262AFF37FD89 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E116726EABA26B5512F874805C1E888B /* Foundation.framework */; };
+		E807A02F4964FFCEA87D57BE39596824 /* MQTTSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E7928FFF139504D2912692C90B9D2121 /* MQTTSessionManager.h */; };
+		E927114D0E017D364420073B1E86CF5B /* MQTTSession.m in Sources */ = {isa = PBXBuildFile; fileRef = F725720406369A5317822704E52BF2F5 /* MQTTSession.m */; };
+		EB476D6193FBA047A37DDB3CDD0E8E97 /* SLKTypingIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1241B435F077848AC3F53AF95224DB5D /* SLKTypingIndicatorView.m */; };
+		F3D8BFAEFC8AC33C9F9D01C2278201DA /* MQTTSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 240F33F2D1BF033DB997496899C487BF /* MQTTSessionManager.m */; };
+		F6888913C210CC81BE9C71CB9735D865 /* SLKTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EEF2D0F02537A8F8E53A16A5592D9C6 /* SLKTextView.m */; };
+		FA5249E9847309F9F4D076CF00F46BD5 /* MQTTDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F9804C2AB873F5E0B2065BD70D71501 /* MQTTDecoder.h */; };
+		FE7530994B35C861221D45611BF12086 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E116726EABA26B5512F874805C1E888B /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1052465E066BF1B89AB40C7CCEE053FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 424A050634FDF1C79B7710B6FADB4089;
+			remoteInfo = SlackTextViewController;
+		};
+		357C09BAF5C19DB82022004B1FA0A006 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3B910D877545A6E1D303E66FFF2EC6D8;
+			remoteInfo = MQTTClient;
+		};
+		3D85BA2BD8107F4E5C538F0DA3765E67 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3B910D877545A6E1D303E66FFF2EC6D8;
+			remoteInfo = MQTTClient;
+		};
+		677C80C016003D4AC461837993C5C1B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 424A050634FDF1C79B7710B6FADB4089;
+			remoteInfo = SlackTextViewController;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0918B72743DF517BA3840D869B0A0550 /* Pods-MQTT-ChatTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MQTT-ChatTests-dummy.m"; sourceTree = "<group>"; };
+		0AC13206CBF50B269E0D23D41C188336 /* Pods-MQTT-Chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MQTT-Chat.release.xcconfig"; sourceTree = "<group>"; };
+		1221D668A136E2684CC4089A75540E55 /* SlackTextViewController-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "SlackTextViewController-Private.xcconfig"; sourceTree = "<group>"; };
+		1241B435F077848AC3F53AF95224DB5D /* SLKTypingIndicatorView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLKTypingIndicatorView.m; path = Source/Classes/SLKTypingIndicatorView.m; sourceTree = "<group>"; };
+		13C3D36304C215E61DE3B9982AD75A4A /* Pods-MQTT-ChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MQTT-ChatTests.release.xcconfig"; sourceTree = "<group>"; };
+		148B84F74DFAD7838B13693909420B74 /* Pods-MQTT-Chat-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MQTT-Chat-dummy.m"; sourceTree = "<group>"; };
+		183A1B3399497442535645A19623D2DE /* SLKTextView+SLKAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "SLKTextView+SLKAdditions.m"; path = "Source/Additions/SLKTextView+SLKAdditions.m"; sourceTree = "<group>"; };
+		23310FA6CD984EC412E6A4BBAB1FA93E /* UIResponder+SLKAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIResponder+SLKAdditions.h"; path = "Source/Additions/UIResponder+SLKAdditions.h"; sourceTree = "<group>"; };
+		240F33F2D1BF033DB997496899C487BF /* MQTTSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQTTSessionManager.m; path = MQTTClient/MQTTClient/MQTTSessionManager.m; sourceTree = "<group>"; };
+		2F9E636D9A78C9E1916553CEE2196878 /* MQTTMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQTTMessage.h; path = MQTTClient/MQTTClient/MQTTMessage.h; sourceTree = "<group>"; };
+		36FE1F1A10567CD5D4B2EDA996C46780 /* SLKTextView+SLKAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SLKTextView+SLKAdditions.h"; path = "Source/Additions/SLKTextView+SLKAdditions.h"; sourceTree = "<group>"; };
+		37C1F8A28ADA367A4BF6D4C10FB32D23 /* Pods-MQTT-ChatTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MQTT-ChatTests-resources.sh"; sourceTree = "<group>"; };
+		3AD8F94D8853C3975F4A9210365C7177 /* MQTTPersistence.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQTTPersistence.h; path = MQTTClient/MQTTClient/MQTTPersistence.h; sourceTree = "<group>"; };
+		3E271EDA7A06291C2C4C32C00961FCDD /* libSlackTextViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSlackTextViewController.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F9804C2AB873F5E0B2065BD70D71501 /* MQTTDecoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQTTDecoder.h; path = MQTTClient/MQTTClient/MQTTDecoder.h; sourceTree = "<group>"; };
+		4319BFF15547CBDDD26FF4265CA90470 /* SLKTextInputbar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLKTextInputbar.h; path = Source/Classes/SLKTextInputbar.h; sourceTree = "<group>"; };
+		451F8622E3463D7732D6CC7C5DE676AE /* SLKTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLKTextView.h; path = Source/Classes/SLKTextView.h; sourceTree = "<group>"; };
+		480A4BE229CAC5F4B1781EFD877F4936 /* libMQTTClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMQTTClient.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		48D811CD3D19BC15E27E850011F71144 /* Pods-MQTT-ChatTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MQTT-ChatTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		4CD9BF12BE20E7E3F24D20AE68AC097D /* MQTTClient-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MQTTClient-prefix.pch"; sourceTree = "<group>"; };
+		4E7EC9D0345C5274DE5A2829EC659ADC /* SLKTypingIndicatorView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLKTypingIndicatorView.h; path = Source/Classes/SLKTypingIndicatorView.h; sourceTree = "<group>"; };
+		540E27147A4C04CC61481555504B9B82 /* MQTTMessage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQTTMessage.m; path = MQTTClient/MQTTClient/MQTTMessage.m; sourceTree = "<group>"; };
+		5EEF2D0F02537A8F8E53A16A5592D9C6 /* SLKTextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLKTextView.m; path = Source/Classes/SLKTextView.m; sourceTree = "<group>"; };
+		60EEF550AB9EA9D8EA18C497B4CACA64 /* MQTTSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQTTSession.h; path = MQTTClient/MQTTClient/MQTTSession.h; sourceTree = "<group>"; };
+		679E7E4F4CE5CC4475ED3D06D2522964 /* MQTTSSLSecurityPolicy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQTTSSLSecurityPolicy.h; path = MQTTClient/MQTTClient/MQTTSSLSecurityPolicy.h; sourceTree = "<group>"; };
+		6871473E62305CB91B8A635B061CC43A /* UIScrollView+SLKAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+SLKAdditions.h"; path = "Source/Additions/UIScrollView+SLKAdditions.h"; sourceTree = "<group>"; };
+		68DDC8593B2C0B95E1243A7802A39854 /* MQTTClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQTTClient.h; path = MQTTClient/MQTTClient/MQTTClient.h; sourceTree = "<group>"; };
+		6B6D4D42CE6E84BE429678F90B598C2D /* SLKTextViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLKTextViewController.h; path = Source/Classes/SLKTextViewController.h; sourceTree = "<group>"; };
+		6FF8BF865C705C9B4A0F6C84E7B1A62D /* libPods-MQTT-ChatTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MQTT-ChatTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		85861862F9E5B3E1308CC3F6D9B06E85 /* Pods-MQTT-ChatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MQTT-ChatTests.debug.xcconfig"; sourceTree = "<group>"; };
+		88B1BFD14B1F80BD2F3673D1E46205DA /* SLKTextInputbar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLKTextInputbar.m; path = Source/Classes/SLKTextInputbar.m; sourceTree = "<group>"; };
+		8968FCA95F596F20FF37E71BCFE5D62D /* SlackTextViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SlackTextViewController-prefix.pch"; sourceTree = "<group>"; };
+		9151AE35A7496B1E21D1BA1D6287C03E /* Pods-MQTT-Chat-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MQTT-Chat-resources.sh"; sourceTree = "<group>"; };
+		99BCFA60B5D69299AA60713B3D5B60C9 /* Pods-MQTT-ChatTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MQTT-ChatTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9BFD739D7A744A30CDE165ED0030AF89 /* libPods-MQTT-Chat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MQTT-Chat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C22697F60BD3C016B5AE2835F25E912 /* UIResponder+SLKAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIResponder+SLKAdditions.m"; path = "Source/Additions/UIResponder+SLKAdditions.m"; sourceTree = "<group>"; };
+		A970D354E65DB48DCC8B57C1BC40BA1F /* SLKTextViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLKTextViewController.m; path = Source/Classes/SLKTextViewController.m; sourceTree = "<group>"; };
+		AB86EDDFFFB39C8056869A8272829C11 /* SlackTextViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SlackTextViewController.xcconfig; sourceTree = "<group>"; };
+		AEF0DA1C3414DD2EEBD769D643E14EC6 /* Pods-MQTT-Chat-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MQTT-Chat-acknowledgements.markdown"; sourceTree = "<group>"; };
+		AF127DFCFD2405143C4FF185D12565B6 /* SLKInputAccessoryView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLKInputAccessoryView.h; path = Source/Classes/SLKInputAccessoryView.h; sourceTree = "<group>"; };
+		B703E1703D5B15A05E52A750194C6684 /* Pods-MQTT-Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MQTT-Chat.debug.xcconfig"; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C0C6F4009990CD2D9A3FE23AD251B3B9 /* SLKInputAccessoryView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLKInputAccessoryView.m; path = Source/Classes/SLKInputAccessoryView.m; sourceTree = "<group>"; };
+		C65CF4C9C5A0FAF6B3A090A6BFEAC865 /* MQTTPersistence.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQTTPersistence.m; path = MQTTClient/MQTTClient/MQTTPersistence.m; sourceTree = "<group>"; };
+		CA37652A5DFB48EA615BD248B35C14DE /* MQTTClient-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MQTTClient-dummy.m"; sourceTree = "<group>"; };
+		D23C9624CE3F16F48F43D0C26B70676A /* UIView+SLKAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+SLKAdditions.m"; path = "Source/Additions/UIView+SLKAdditions.m"; sourceTree = "<group>"; };
+		D2F2C766B22745CE03807C31FC2332CF /* UIView+SLKAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+SLKAdditions.h"; path = "Source/Additions/UIView+SLKAdditions.h"; sourceTree = "<group>"; };
+		D3099A27F3350A656A21657E1EE69514 /* MQTTDecoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQTTDecoder.m; path = MQTTClient/MQTTClient/MQTTDecoder.m; sourceTree = "<group>"; };
+		D82AC6CB9985BAAD9358F2DD06C62013 /* MQTTSSLSecurityPolicy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQTTSSLSecurityPolicy.m; path = MQTTClient/MQTTClient/MQTTSSLSecurityPolicy.m; sourceTree = "<group>"; };
+		D8E47CDBE81B1E85F43DD141680E8108 /* UIScrollView+SLKAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+SLKAdditions.m"; path = "Source/Additions/UIScrollView+SLKAdditions.m"; sourceTree = "<group>"; };
+		DB029D8C498BE700DD11E6BB5DC77A7C /* Pods-MQTT-Chat-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MQTT-Chat-acknowledgements.plist"; sourceTree = "<group>"; };
+		DDCD651FABBA1F934295E126748AEC34 /* SLKTypingIndicatorProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLKTypingIndicatorProtocol.h; path = Source/Classes/SLKTypingIndicatorProtocol.h; sourceTree = "<group>"; };
+		DE85487869F524B7363F6A0F1F8BD7D9 /* MQTTClient.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MQTTClient.xcconfig; sourceTree = "<group>"; };
+		E116726EABA26B5512F874805C1E888B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		E2EF03B67EC4E84A49B0ECCF73606819 /* SlackTextViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SlackTextViewController-dummy.m"; sourceTree = "<group>"; };
+		E7928FFF139504D2912692C90B9D2121 /* MQTTSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQTTSessionManager.h; path = MQTTClient/MQTTClient/MQTTSessionManager.h; sourceTree = "<group>"; };
+		E9675B19DADAD2B1BB412CF64884ED01 /* MQTTClient-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "MQTTClient-Private.xcconfig"; sourceTree = "<group>"; };
+		F4AEE7B7BC013CD8560DB62ED54BFA1D /* MQTTEncoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQTTEncoder.m; path = MQTTClient/MQTTClient/MQTTEncoder.m; sourceTree = "<group>"; };
+		F6AB1AE930C0788FE3B40FC528BF60C9 /* MQTTEncoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQTTEncoder.h; path = MQTTClient/MQTTClient/MQTTEncoder.h; sourceTree = "<group>"; };
+		F725720406369A5317822704E52BF2F5 /* MQTTSession.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQTTSession.m; path = MQTTClient/MQTTClient/MQTTSession.m; sourceTree = "<group>"; };
+		FE95F1AAD8383CF2321B3B5385EAB4D9 /* SLKUIConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLKUIConstants.h; path = Source/Additions/SLKUIConstants.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6F68C4F02C5B930E90BF483976B969D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60BCA144618A26D5DDFD4E08F5CDDC48 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91DCEBA2031873A0A4F40EF935DB99C1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE7530994B35C861221D45611BF12086 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9546E36CAFCC0D8A1F2C4CCE9CB75D32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D65F48825DE701194D81262AFF37FD89 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A54CD62E4496B98DAD7C6410F8496B77 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37A46C20D8CC1802A67145BBC4E85DEF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		473E1590B2B0FEEC91D75AE2955224A2 /* Pods-MQTT-Chat */ = {
+			isa = PBXGroup;
+			children = (
+				AEF0DA1C3414DD2EEBD769D643E14EC6 /* Pods-MQTT-Chat-acknowledgements.markdown */,
+				DB029D8C498BE700DD11E6BB5DC77A7C /* Pods-MQTT-Chat-acknowledgements.plist */,
+				148B84F74DFAD7838B13693909420B74 /* Pods-MQTT-Chat-dummy.m */,
+				9151AE35A7496B1E21D1BA1D6287C03E /* Pods-MQTT-Chat-resources.sh */,
+				B703E1703D5B15A05E52A750194C6684 /* Pods-MQTT-Chat.debug.xcconfig */,
+				0AC13206CBF50B269E0D23D41C188336 /* Pods-MQTT-Chat.release.xcconfig */,
+			);
+			name = "Pods-MQTT-Chat";
+			path = "Target Support Files/Pods-MQTT-Chat";
+			sourceTree = "<group>";
+		};
+		53F661C0CA7190D2CF05023FB33D61E4 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				E116726EABA26B5512F874805C1E888B /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		5E268A5B69D22D0DB4119E3BD7592BB1 /* MQTTClient */ = {
+			isa = PBXGroup;
+			children = (
+				68DDC8593B2C0B95E1243A7802A39854 /* MQTTClient.h */,
+				3F9804C2AB873F5E0B2065BD70D71501 /* MQTTDecoder.h */,
+				D3099A27F3350A656A21657E1EE69514 /* MQTTDecoder.m */,
+				F6AB1AE930C0788FE3B40FC528BF60C9 /* MQTTEncoder.h */,
+				F4AEE7B7BC013CD8560DB62ED54BFA1D /* MQTTEncoder.m */,
+				2F9E636D9A78C9E1916553CEE2196878 /* MQTTMessage.h */,
+				540E27147A4C04CC61481555504B9B82 /* MQTTMessage.m */,
+				3AD8F94D8853C3975F4A9210365C7177 /* MQTTPersistence.h */,
+				C65CF4C9C5A0FAF6B3A090A6BFEAC865 /* MQTTPersistence.m */,
+				679E7E4F4CE5CC4475ED3D06D2522964 /* MQTTSSLSecurityPolicy.h */,
+				D82AC6CB9985BAAD9358F2DD06C62013 /* MQTTSSLSecurityPolicy.m */,
+				60EEF550AB9EA9D8EA18C497B4CACA64 /* MQTTSession.h */,
+				F725720406369A5317822704E52BF2F5 /* MQTTSession.m */,
+				E7928FFF139504D2912692C90B9D2121 /* MQTTSessionManager.h */,
+				240F33F2D1BF033DB997496899C487BF /* MQTTSessionManager.m */,
+				6BDD522298FDE3F756C82A19F5329D6F /* Support Files */,
+			);
+			path = MQTTClient;
+			sourceTree = "<group>";
+		};
+		6BDD522298FDE3F756C82A19F5329D6F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DE85487869F524B7363F6A0F1F8BD7D9 /* MQTTClient.xcconfig */,
+				E9675B19DADAD2B1BB412CF64884ED01 /* MQTTClient-Private.xcconfig */,
+				CA37652A5DFB48EA615BD248B35C14DE /* MQTTClient-dummy.m */,
+				4CD9BF12BE20E7E3F24D20AE68AC097D /* MQTTClient-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MQTTClient";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				FF3B1DF5326984DF155F83E991C5AC8A /* Pods */,
+				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
+				C16BDC002C9DE994D2C6BD2B8092B66E /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		A97C4D6C4FAE7B24917BE6886656989E /* SlackTextViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AF127DFCFD2405143C4FF185D12565B6 /* SLKInputAccessoryView.h */,
+				C0C6F4009990CD2D9A3FE23AD251B3B9 /* SLKInputAccessoryView.m */,
+				4319BFF15547CBDDD26FF4265CA90470 /* SLKTextInputbar.h */,
+				88B1BFD14B1F80BD2F3673D1E46205DA /* SLKTextInputbar.m */,
+				451F8622E3463D7732D6CC7C5DE676AE /* SLKTextView.h */,
+				5EEF2D0F02537A8F8E53A16A5592D9C6 /* SLKTextView.m */,
+				36FE1F1A10567CD5D4B2EDA996C46780 /* SLKTextView+SLKAdditions.h */,
+				183A1B3399497442535645A19623D2DE /* SLKTextView+SLKAdditions.m */,
+				6B6D4D42CE6E84BE429678F90B598C2D /* SLKTextViewController.h */,
+				A970D354E65DB48DCC8B57C1BC40BA1F /* SLKTextViewController.m */,
+				DDCD651FABBA1F934295E126748AEC34 /* SLKTypingIndicatorProtocol.h */,
+				4E7EC9D0345C5274DE5A2829EC659ADC /* SLKTypingIndicatorView.h */,
+				1241B435F077848AC3F53AF95224DB5D /* SLKTypingIndicatorView.m */,
+				FE95F1AAD8383CF2321B3B5385EAB4D9 /* SLKUIConstants.h */,
+				23310FA6CD984EC412E6A4BBAB1FA93E /* UIResponder+SLKAdditions.h */,
+				9C22697F60BD3C016B5AE2835F25E912 /* UIResponder+SLKAdditions.m */,
+				6871473E62305CB91B8A635B061CC43A /* UIScrollView+SLKAdditions.h */,
+				D8E47CDBE81B1E85F43DD141680E8108 /* UIScrollView+SLKAdditions.m */,
+				D2F2C766B22745CE03807C31FC2332CF /* UIView+SLKAdditions.h */,
+				D23C9624CE3F16F48F43D0C26B70676A /* UIView+SLKAdditions.m */,
+				E4C713DE4128959CAC38ED88B775185F /* Support Files */,
+			);
+			path = SlackTextViewController;
+			sourceTree = "<group>";
+		};
+		AD0ECF54F7899D194498AE7181DC9C32 /* Pods-MQTT-ChatTests */ = {
+			isa = PBXGroup;
+			children = (
+				99BCFA60B5D69299AA60713B3D5B60C9 /* Pods-MQTT-ChatTests-acknowledgements.markdown */,
+				48D811CD3D19BC15E27E850011F71144 /* Pods-MQTT-ChatTests-acknowledgements.plist */,
+				0918B72743DF517BA3840D869B0A0550 /* Pods-MQTT-ChatTests-dummy.m */,
+				37C1F8A28ADA367A4BF6D4C10FB32D23 /* Pods-MQTT-ChatTests-resources.sh */,
+				85861862F9E5B3E1308CC3F6D9B06E85 /* Pods-MQTT-ChatTests.debug.xcconfig */,
+				13C3D36304C215E61DE3B9982AD75A4A /* Pods-MQTT-ChatTests.release.xcconfig */,
+			);
+			name = "Pods-MQTT-ChatTests";
+			path = "Target Support Files/Pods-MQTT-ChatTests";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				53F661C0CA7190D2CF05023FB33D61E4 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C16BDC002C9DE994D2C6BD2B8092B66E /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				473E1590B2B0FEEC91D75AE2955224A2 /* Pods-MQTT-Chat */,
+				AD0ECF54F7899D194498AE7181DC9C32 /* Pods-MQTT-ChatTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				480A4BE229CAC5F4B1781EFD877F4936 /* libMQTTClient.a */,
+				9BFD739D7A744A30CDE165ED0030AF89 /* libPods-MQTT-Chat.a */,
+				6FF8BF865C705C9B4A0F6C84E7B1A62D /* libPods-MQTT-ChatTests.a */,
+				3E271EDA7A06291C2C4C32C00961FCDD /* libSlackTextViewController.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E4C713DE4128959CAC38ED88B775185F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				AB86EDDFFFB39C8056869A8272829C11 /* SlackTextViewController.xcconfig */,
+				1221D668A136E2684CC4089A75540E55 /* SlackTextViewController-Private.xcconfig */,
+				E2EF03B67EC4E84A49B0ECCF73606819 /* SlackTextViewController-dummy.m */,
+				8968FCA95F596F20FF37E71BCFE5D62D /* SlackTextViewController-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SlackTextViewController";
+			sourceTree = "<group>";
+		};
+		FF3B1DF5326984DF155F83E991C5AC8A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5E268A5B69D22D0DB4119E3BD7592BB1 /* MQTTClient */,
+				A97C4D6C4FAE7B24917BE6886656989E /* SlackTextViewController */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		152AED8E9891F80EE8C09940FCBD3196 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A0CF4C59DD924E3C6BB10038889FBC9 /* MQTTClient.h in Headers */,
+				FA5249E9847309F9F4D076CF00F46BD5 /* MQTTDecoder.h in Headers */,
+				BBC9EE328C80566588A116B2B59E4050 /* MQTTEncoder.h in Headers */,
+				510FB5340E6EABBF685AEA08AA7EA86F /* MQTTMessage.h in Headers */,
+				982BE7E86CDAC162CE5ECC92D0369162 /* MQTTPersistence.h in Headers */,
+				99F26CD15F491963EFAEB75CF2CC1A6F /* MQTTSSLSecurityPolicy.h in Headers */,
+				327992C63E7472C0C58F0585C9E7C256 /* MQTTSession.h in Headers */,
+				E807A02F4964FFCEA87D57BE39596824 /* MQTTSessionManager.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBD0EC6B97081EF70B517ABB99969DCC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B28AB5E6ADF7A8D00C0E7B77680DEB37 /* SLKInputAccessoryView.h in Headers */,
+				8C9073D5E17304C55523FF8F54AB2103 /* SLKTextInputbar.h in Headers */,
+				69E998F9FB29A395A0BE6A0755918AAF /* SLKTextView+SLKAdditions.h in Headers */,
+				AC62FBBEE8EE4714143790D80B4D1E8E /* SLKTextView.h in Headers */,
+				D43EDBBDC334C0DC3D7A81FE55D29BF0 /* SLKTextViewController.h in Headers */,
+				BF68788E8B50D38C1873388F7116C48A /* SLKTypingIndicatorProtocol.h in Headers */,
+				7B74BDED5D885322A03C1B8B679891A5 /* SLKTypingIndicatorView.h in Headers */,
+				026BCDE9D1C8F5B1BB9E37BDE358BECC /* SLKUIConstants.h in Headers */,
+				03F2665E71D334A7A6194C0DA9CA4ADA /* UIResponder+SLKAdditions.h in Headers */,
+				95F424EBC8582301CC8A07A9A0833FBF /* UIScrollView+SLKAdditions.h in Headers */,
+				7A9613A7CE713566ECB4F21B57612E47 /* UIView+SLKAdditions.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		20113170FB69FF8536D8C083C142D649 /* Pods-MQTT-ChatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4D89A42C456BA04ADF685A48B336074 /* Build configuration list for PBXNativeTarget "Pods-MQTT-ChatTests" */;
+			buildPhases = (
+				80479B695DC90A572A406157140D52DE /* Sources */,
+				9546E36CAFCC0D8A1F2C4CCE9CB75D32 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF255114F95B5C4F3F53A358D02209C8 /* PBXTargetDependency */,
+				A45EBA2DA802920A8B1DCFF86C01648A /* PBXTargetDependency */,
+			);
+			name = "Pods-MQTT-ChatTests";
+			productName = "Pods-MQTT-ChatTests";
+			productReference = 6FF8BF865C705C9B4A0F6C84E7B1A62D /* libPods-MQTT-ChatTests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		3B910D877545A6E1D303E66FFF2EC6D8 /* MQTTClient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3DC2EE5AFA1AE2C43265BB72601F345 /* Build configuration list for PBXNativeTarget "MQTTClient" */;
+			buildPhases = (
+				4FE0C478FF714C9714DEB21FAEAD7473 /* Sources */,
+				91DCEBA2031873A0A4F40EF935DB99C1 /* Frameworks */,
+				152AED8E9891F80EE8C09940FCBD3196 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MQTTClient;
+			productName = MQTTClient;
+			productReference = 480A4BE229CAC5F4B1781EFD877F4936 /* libMQTTClient.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		424A050634FDF1C79B7710B6FADB4089 /* SlackTextViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D842B41FDBC600590D18D4C485A7C95C /* Build configuration list for PBXNativeTarget "SlackTextViewController" */;
+			buildPhases = (
+				EA27DF3A93031B8F275E1A5FA61012EE /* Sources */,
+				6F68C4F02C5B930E90BF483976B969D4 /* Frameworks */,
+				BBD0EC6B97081EF70B517ABB99969DCC /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SlackTextViewController;
+			productName = SlackTextViewController;
+			productReference = 3E271EDA7A06291C2C4C32C00961FCDD /* libSlackTextViewController.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		EC06197F138D864C7F14EB8FB964E754 /* Pods-MQTT-Chat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 591B4213C4E857A5022D63EDAC80D29F /* Build configuration list for PBXNativeTarget "Pods-MQTT-Chat" */;
+			buildPhases = (
+				AD038320FB2C4353E9D18F91558DE47B /* Sources */,
+				A54CD62E4496B98DAD7C6410F8496B77 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				44CD63E2F321D58C1116CA03C773E5A0 /* PBXTargetDependency */,
+				12FEEC1C024A703B449ADF93EC95B58F /* PBXTargetDependency */,
+			);
+			name = "Pods-MQTT-Chat";
+			productName = "Pods-MQTT-Chat";
+			productReference = 9BFD739D7A744A30CDE165ED0030AF89 /* libPods-MQTT-Chat.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = CCA510CFBEA2D207524CDA0D73C3B561 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3B910D877545A6E1D303E66FFF2EC6D8 /* MQTTClient */,
+				EC06197F138D864C7F14EB8FB964E754 /* Pods-MQTT-Chat */,
+				20113170FB69FF8536D8C083C142D649 /* Pods-MQTT-ChatTests */,
+				424A050634FDF1C79B7710B6FADB4089 /* SlackTextViewController */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4FE0C478FF714C9714DEB21FAEAD7473 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CB9AC313B3AA070092B31FAF0E445DB /* MQTTClient-dummy.m in Sources */,
+				BA8A6EC79B2F5DAE207E44C81F319B03 /* MQTTDecoder.m in Sources */,
+				036523D1BC9E6E0DE5D46BBA34AB6A43 /* MQTTEncoder.m in Sources */,
+				106B09BF003943BD7365E9BAE69D0C40 /* MQTTMessage.m in Sources */,
+				D626EF431BBFF105CCC5FBFA108C0ABF /* MQTTPersistence.m in Sources */,
+				1047E8A8EC1B4CC7E90534DC3581554E /* MQTTSSLSecurityPolicy.m in Sources */,
+				E927114D0E017D364420073B1E86CF5B /* MQTTSession.m in Sources */,
+				F3D8BFAEFC8AC33C9F9D01C2278201DA /* MQTTSessionManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80479B695DC90A572A406157140D52DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFCF909640866A5293285667E9C4BE4B /* Pods-MQTT-ChatTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD038320FB2C4353E9D18F91558DE47B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1222D4D1E4B5789B78B209DC4048801 /* Pods-MQTT-Chat-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA27DF3A93031B8F275E1A5FA61012EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D001F6A50EBB661B9518F4AB892D4812 /* SLKInputAccessoryView.m in Sources */,
+				36A8C88B46F02DF046714E84DC10061D /* SLKTextInputbar.m in Sources */,
+				AB637EC893D4F166C2369A49A136FE6D /* SLKTextView+SLKAdditions.m in Sources */,
+				F6888913C210CC81BE9C71CB9735D865 /* SLKTextView.m in Sources */,
+				7D7E2700E92CA741B678CA7DACFB8A0D /* SLKTextViewController.m in Sources */,
+				EB476D6193FBA047A37DDB3CDD0E8E97 /* SLKTypingIndicatorView.m in Sources */,
+				462F660DF5AD2A6CB7E7D2A269C6A1A1 /* SlackTextViewController-dummy.m in Sources */,
+				8F0D67A3FE48FFFBE1FD3608B86C95E9 /* UIResponder+SLKAdditions.m in Sources */,
+				A235521094F61E7D13404B6212F1185F /* UIScrollView+SLKAdditions.m in Sources */,
+				002C72DF03485F8031AEEDDC35572ADB /* UIView+SLKAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		12FEEC1C024A703B449ADF93EC95B58F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SlackTextViewController;
+			target = 424A050634FDF1C79B7710B6FADB4089 /* SlackTextViewController */;
+			targetProxy = 677C80C016003D4AC461837993C5C1B1 /* PBXContainerItemProxy */;
+		};
+		44CD63E2F321D58C1116CA03C773E5A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MQTTClient;
+			target = 3B910D877545A6E1D303E66FFF2EC6D8 /* MQTTClient */;
+			targetProxy = 3D85BA2BD8107F4E5C538F0DA3765E67 /* PBXContainerItemProxy */;
+		};
+		A45EBA2DA802920A8B1DCFF86C01648A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SlackTextViewController;
+			target = 424A050634FDF1C79B7710B6FADB4089 /* SlackTextViewController */;
+			targetProxy = 1052465E066BF1B89AB40C7CCEE053FA /* PBXContainerItemProxy */;
+		};
+		BF255114F95B5C4F3F53A358D02209C8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MQTTClient;
+			target = 3B910D877545A6E1D303E66FFF2EC6D8 /* MQTTClient */;
+			targetProxy = 357C09BAF5C19DB82022004B1FA0A006 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		511103F7F15A7E8F83B268EA03462CAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5F0519B9C1F4C342A0C4E1778779B764 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B703E1703D5B15A05E52A750194C6684 /* Pods-MQTT-Chat.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		79D6D19B97935C0ED6004230BC3FC92C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1221D668A136E2684CC4089A75540E55 /* SlackTextViewController-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SlackTextViewController/SlackTextViewController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		85E73A3A2AA73A166E94A0B7551F1401 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85861862F9E5B3E1308CC3F6D9B06E85 /* Pods-MQTT-ChatTests.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		8EE70C1117B228296A4EB20C1642D4BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9675B19DADAD2B1BB412CF64884ED01 /* MQTTClient-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MQTTClient/MQTTClient-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		983100981063A3D4EF11206AA3E05059 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9675B19DADAD2B1BB412CF64884ED01 /* MQTTClient-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MQTTClient/MQTTClient-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		AA05AF9C3A14EE0E32F42C6E6D42D34F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		C653D3AC1EB61907D719417C57F10D65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0AC13206CBF50B269E0D23D41C188336 /* Pods-MQTT-Chat.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		D3ED1681ABA2C95E039CFBB01D47A049 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1221D668A136E2684CC4089A75540E55 /* SlackTextViewController-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SlackTextViewController/SlackTextViewController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		DA49D43E2E2893053A020D4CADA42B1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13C3D36304C215E61DE3B9982AD75A4A /* Pods-MQTT-ChatTests.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA05AF9C3A14EE0E32F42C6E6D42D34F /* Debug */,
+				511103F7F15A7E8F83B268EA03462CAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		591B4213C4E857A5022D63EDAC80D29F /* Build configuration list for PBXNativeTarget "Pods-MQTT-Chat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F0519B9C1F4C342A0C4E1778779B764 /* Debug */,
+				C653D3AC1EB61907D719417C57F10D65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3DC2EE5AFA1AE2C43265BB72601F345 /* Build configuration list for PBXNativeTarget "MQTTClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				983100981063A3D4EF11206AA3E05059 /* Debug */,
+				8EE70C1117B228296A4EB20C1642D4BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D842B41FDBC600590D18D4C485A7C95C /* Build configuration list for PBXNativeTarget "SlackTextViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3ED1681ABA2C95E039CFBB01D47A049 /* Debug */,
+				79D6D19B97935C0ED6004230BC3FC92C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4D89A42C456BA04ADF685A48B336074 /* Build configuration list for PBXNativeTarget "Pods-MQTT-ChatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85E73A3A2AA73A166E94A0B7551F1401 /* Debug */,
+				DA49D43E2E2893053A020D4CADA42B1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

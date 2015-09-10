@@ -1,0 +1,13 @@
+PODS:
+  - MQTTClient (0.2.6)
+  - SlackTextViewController (1.7)
+
+DEPENDENCIES:
+  - MQTTClient (= 0.2.6)
+  - SlackTextViewController
+
+SPEC CHECKSUMS:
+  MQTTClient: f3af97fd4e26e0644364cb24e809b9646afce202
+  SlackTextViewController: 57e28248dd38b9753277733544449519842f1ea5
+
+COCOAPODS: 0.38.2
