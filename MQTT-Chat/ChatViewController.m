@@ -257,7 +257,6 @@ static NSString *MessengerCellIdentifier = @"MessengerCell";
 #pragma mark - MQTT related codes
 
 //Handle the incomming message
-//TODO: JSON!
 - (void)handleMessage:(NSData *)data onTopic:(NSString *)topic retained:(BOOL)retained {
     
     NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
