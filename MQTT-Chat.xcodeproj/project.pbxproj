@@ -222,6 +222,7 @@
 				TargetAttributes = {
 					1A32F7B41BA16F5A00DF0127 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = J53857Z5GF;
 					};
 					1A32F7CD1BA16F5A00DF0127 = {
 						CreatedOnToolsVersion = 6.4;
@@ -471,6 +472,7 @@
 			baseConfigurationReference = 550254C12D4A71CA80C4A436 /* Pods-MQTT-Chat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "MQTT-Chat/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -482,6 +484,7 @@
 			baseConfigurationReference = E68A9E78538A5C86C5A8883A /* Pods-MQTT-Chat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "MQTT-Chat/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
