@@ -20,6 +20,8 @@ static NSString *MessengerCellIdentifier = @"MessengerCell";
 @property (strong,nonatomic) MQTTSessionManager *mqttManager;
 @property(strong,nonatomic) NSString *userid;
 
+- (void)disconnectMqtt;
+
 @end
 
 @implementation ChatViewController
@@ -126,6 +128,21 @@ static NSString *MessengerCellIdentifier = @"MessengerCell";
     
     //Send here the message to the MQTT Broker and that's it.
     
+    NSDictionary *newmessageJson = @{
+                                @"userid" : self.userid,
+                                @"username" : self.username,
+                                @"message" : self.textView.text,
+                                };
+    NSError *jsonError;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:newmessageJson
+                                                       options:0
+                                                         error:&jsonError];
+    [self.mqttManager sendData:jsonData
+                         topic:self.topicPath
+                           qos:MQTTQosLevelExactlyOnce
+                        retain:NO];
+    
+    
     [super didPressRightButton:sender];
 }
 
@@ -212,25 +229,6 @@ static NSString *MessengerCellIdentifier = @"MessengerCell";
     }
 }
 
-
-
-#pragma mark - <UITableViewDelegate>
-
-/*
-// Uncomment this method to handle the cell selection
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if ([tableView isEqual:self.tableView]) {
-
-    }
-    if ([tableView isEqual:self.autoCompletionView]) {
-
-        [self acceptAutoCompletionWithString:<#@"any_string"#>];
-    }
-}
-*/
-
-
 #pragma mark - View lifeterm
 
 - (void)didReceiveMemoryWarning{
@@ -245,14 +243,15 @@ static NSString *MessengerCellIdentifier = @"MessengerCell";
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-//Whatever seque is preparing, close MQTT connection!!!
-    //MQTT close and some cleanup goes here
+    //Whatever seque is preparing, close MQTT connection!!!
+    [self disconnectMqtt];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     
-    //MQTT close and some cleanup goes here
+    //needs more check
+    [self disconnectMqtt];
 }
 
 #pragma mark - MQTT related codes
@@ -260,31 +259,36 @@ static NSString *MessengerCellIdentifier = @"MessengerCell";
 //Handle the incomming message
 //TODO: JSON!
 - (void)handleMessage:(NSData *)data onTopic:(NSString *)topic retained:(BOOL)retained {
-    /*
-     * MQTTClient: process received message
-     */
     
     NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSString *senderString = topic;
 
     NSLog(@"%@",dataString);
     
-    Message *message = [Message new];
-    message.username = self.username; //just for testing
-    message.text = dataString;
+    NSError *jsonError;
+    NSDictionary *incomMessage = [NSJSONSerialization JSONObjectWithData:data
+                                                                 options:NSJSONReadingMutableContainers
+                                                                   error:&jsonError];
+    if(incomMessage){
     
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    UITableViewRowAnimation rowAnimation = self.inverted ? UITableViewRowAnimationBottom : UITableViewRowAnimationTop;
-    UITableViewScrollPosition scrollPosition = self.inverted ? UITableViewScrollPositionBottom : UITableViewScrollPositionTop;
+        Message *message = [Message new];
+        message.username = incomMessage[@"username"];
+        message.text = incomMessage[@"message"];
     
-    [self.tableView beginUpdates];
-    [self.messages insertObject:message atIndex:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:rowAnimation];
-    [self.tableView endUpdates];
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+        UITableViewRowAnimation rowAnimation = self.inverted ? UITableViewRowAnimationBottom : UITableViewRowAnimationTop;
+        UITableViewScrollPosition scrollPosition = self.inverted ? UITableViewScrollPositionBottom : UITableViewScrollPositionTop;
     
-    [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:scrollPosition animated:YES];
+        [self.tableView beginUpdates];
+        [self.messages insertObject:message atIndex:0];
+        [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:rowAnimation];
+        [self.tableView endUpdates];
     
-    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:scrollPosition animated:YES];
+    
+        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    } else {
+        NSLog(@"ERROR with incomMessage");
+    }
     
 }
 
@@ -324,30 +328,9 @@ static NSString *MessengerCellIdentifier = @"MessengerCell";
     }
 }
 
-
-//FOR MQTT callbacks:
-/*
- [self.textView refreshFirstResponder];
- 
- Message *message = [Message new];
- message.username = [LoremIpsum name];
- message.text = [self.textView.text copy];
- 
- NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
- UITableViewRowAnimation rowAnimation = self.inverted ? UITableViewRowAnimationBottom : UITableViewRowAnimationTop;
- UITableViewScrollPosition scrollPosition = self.inverted ? UITableViewScrollPositionBottom : UITableViewScrollPositionTop;
- 
- [self.tableView beginUpdates];
- [self.messages insertObject:message atIndex:0];
- [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:rowAnimation];
- [self.tableView endUpdates];
- 
- [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:scrollPosition animated:YES];
- 
- [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
- 
- [super didPressRightButton:sender];
-
- */
+- (void)disconnectMqtt{
+    [self.mqttManager removeObserver:self forKeyPath:@"state"];
+    [self.mqttManager disconnect];
+}
 
 @end
