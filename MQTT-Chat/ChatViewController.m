@@ -9,12 +9,16 @@
 #import "ChatViewController.h"
 #import "Message.h"
 #import "MessageTableViewCell.h"
+#import <MQTTClient/MQTTClient.h>
+#import <MQTTClient/MQTTSessionManager.h>
 
 static NSString *MessengerCellIdentifier = @"MessengerCell";
 
-@interface ChatViewController ()
+@interface ChatViewController ()<MQTTSessionManagerDelegate>
 
 @property (strong, nonatomic) NSMutableArray *messages;
+@property (strong,nonatomic) MQTTSessionManager *mqttManager;
+@property(strong,nonatomic) NSString *userid;
 
 @end
 
@@ -44,30 +48,45 @@ static NSString *MessengerCellIdentifier = @"MessengerCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.userid = [[NSUUID UUID] UUIDString];
     
     self.messages = [[NSMutableArray alloc]init];
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLineEtched;
     [self.tableView registerClass:[MessageTableViewCell class] forCellReuseIdentifier:MessengerCellIdentifier];
     
-    //Some test for init :)
+    // MQTT setup
+    if (self.mqttManager == nil) {
+        
+        self.mqttManager = [[MQTTSessionManager alloc] init];
+        self.mqttManager.delegate = self;
+        self.mqttManager.subscriptions = [[NSMutableDictionary alloc] init];
+        
+        self.mqttManager.subscriptions[self.topicPath] = @(MQTTQosLevelAtMostOnce);
+        
+        [self.mqttManager connectTo:@"fds-node1.cloudapp.net"
+                               port:1883
+                                tls:NO
+                          keepalive:60
+                              clean:YES
+                               auth:NO
+                               user:nil
+                               pass:nil
+                               will:NO
+                          willTopic:nil
+                            willMsg:nil
+                            willQos:MQTTQosLevelAtMostOnce
+                     willRetainFlag:NO
+                       withClientId:self.userid];
+    } else {
+        //else we can reconnect to the last mqtt server
+        [self.mqttManager connectToLast];
+    }
     
-    Message *message = [Message new];
-    message.username = self.username;
-    message.text = self.topicPath;
-    
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    UITableViewRowAnimation rowAnimation = self.inverted ? UITableViewRowAnimationBottom : UITableViewRowAnimationTop;
-    
-    [self.tableView beginUpdates];
-    [self.messages insertObject:message atIndex:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:rowAnimation];
-    [self.tableView endUpdates];
-    
-    
-    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-    
-    // MQTT setup goes here
+    [self.mqttManager addObserver:self
+                       forKeyPath:@"state"
+                          options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
+                          context:nil];
 }
 
 
@@ -237,7 +256,7 @@ static NSString *MessengerCellIdentifier = @"MessengerCell";
         NSDictionary *attributes = @{NSFontAttributeName: [UIFont systemFontOfSize:pointSize],
                                      NSParagraphStyleAttributeName: paragraphStyle};
         
-        CGFloat width = CGRectGetWidth(tableView.frame)-kMessageTableViewCellAvatarHeight;
+        CGFloat width = CGRectGetWidth(tableView.frame);
         width -= 25.0;
         
         CGRect titleBounds = [message.username boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:NULL];
@@ -304,6 +323,76 @@ static NSString *MessengerCellIdentifier = @"MessengerCell";
     
     //MQTT close and some cleanup goes here
 }
+
+#pragma mark - MQTT related codes
+
+//Handle the incomming message
+//TODO: JSON!
+- (void)handleMessage:(NSData *)data onTopic:(NSString *)topic retained:(BOOL)retained {
+    /*
+     * MQTTClient: process received message
+     */
+    
+    NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSString *senderString = topic;
+
+    NSLog(@"%@",dataString);
+    
+    Message *message = [Message new];
+    message.username = self.username; //just for testing
+    message.text = dataString;
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    UITableViewRowAnimation rowAnimation = self.inverted ? UITableViewRowAnimationBottom : UITableViewRowAnimationTop;
+    UITableViewScrollPosition scrollPosition = self.inverted ? UITableViewScrollPositionBottom : UITableViewScrollPositionTop;
+    
+    [self.tableView beginUpdates];
+    [self.messages insertObject:message atIndex:0];
+    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:rowAnimation];
+    [self.tableView endUpdates];
+    
+    [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:scrollPosition animated:YES];
+    
+    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    
+}
+
+//Observer
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    
+    switch (self.mqttManager.state) {
+        case MQTTSessionManagerStateClosed: {
+            NSLog(@"MQTT: Connection closed");
+            break;
+        }
+        case MQTTSessionManagerStateClosing: {
+            NSLog(@"MQTT: Connection closing");
+            break;
+        }
+        case MQTTSessionManagerStateConnected: {
+            NSLog(@"MQTT: Connected");
+            break;
+        }
+        case MQTTSessionManagerStateConnecting: {
+            NSLog(@"MQTT: Connection connecting");
+            break;
+        }
+        case MQTTSessionManagerStateError: {
+            NSLog(@"MQTT: Error");
+            break;
+        }
+        case MQTTSessionManagerStateStarting:{
+            NSLog(@"MQTT: Connection starting");
+            break;
+        }
+        default: {
+            NSLog(@"MQTT: Not connected");
+            break;
+        }
+    }
+}
+
 
 //FOR MQTT callbacks:
 /*
