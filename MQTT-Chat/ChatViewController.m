@@ -54,7 +54,7 @@ static NSString *MessengerCellIdentifier = @"MessengerCell";
     
     self.messages = [[NSMutableArray alloc]init];
     
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLineEtched;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerClass:[MessageTableViewCell class] forCellReuseIdentifier:MessengerCellIdentifier];
     
     // MQTT setup

@@ -10,7 +10,7 @@
 
 #import <UIKit/UIKit.h>
 
-static CGFloat kMessageTableViewCellMinimumHeight = 50.0;
+static CGFloat kMessageTableViewCellMinimumHeight = 10.0;
 
 @interface MessageTableViewCell : UITableViewCell
 
