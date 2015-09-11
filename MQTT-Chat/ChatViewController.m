@@ -32,7 +32,10 @@ static NSString *MessengerCellIdentifier = @"MessengerCell";
 - (id)init {
     self = [super initWithTableViewStyle:UITableViewStylePlain];
     if (self) {
-        [[NSNotificationCenter defaultCenter] addObserver:self.tableView selector:@selector(reloadData) name:UIContentSizeCategoryDidChangeNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self.tableView
+                                                 selector:@selector(reloadData)
+                                                     name:UIContentSizeCategoryDidChangeNotification
+                                                   object:nil];
     }
     return self;
 }
@@ -60,11 +63,14 @@ static NSString *MessengerCellIdentifier = @"MessengerCell";
     // MQTT setup
     if (self.mqttManager == nil) {
         
-        self.mqttManager = [[MQTTSessionManager alloc] init];
+        self.mqttManager = [MQTTSessionManager new];
         self.mqttManager.delegate = self;
-        self.mqttManager.subscriptions = [[NSMutableDictionary alloc] init];
         
-        self.mqttManager.subscriptions[self.topicPath] = @(MQTTQosLevelAtMostOnce);
+        NSMutableDictionary * newSubscription = @{
+                                                  self.topicPath : @(MQTTQosLevelAtMostOnce)
+                                                  }.mutableCopy;
+        self.mqttManager.subscriptions = newSubscription;
+
         
         [self.mqttManager connectTo:@"fds-node1.cloudapp.net"
                                port:1883
